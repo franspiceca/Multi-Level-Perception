@@ -17,3 +17,14 @@ df.color = pd.Categorical(df.color)
 df.cut = df.cut.cat.codes 
 df.color = df.color.cat.codes
 df.head()
+
+##Defining discrete and countinuous features
+discrete_features = ['cut', 'color']
+continuous_features = ['carat', 'depth', 'table', 'x', 'y', 'z']
+
+##Defining X and y for ML
+X = df[continuous_features + discrete_features]
+y = df['price']
+
+##Splitting testing and training data
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
