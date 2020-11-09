@@ -13,9 +13,11 @@ df.head()
 ##Preparing data for classification (turning into cateogrical for processing)
 df.cut = pd.Categorical(df.cut)
 df.color = pd.Categorical(df.color)
+df.clarity = pd.Categorical(df.clarity)
 
 df.cut = df.cut.cat.codes 
 df.color = df.color.cat.codes
+df.clarity = df.clarity.cat.codes
 df.head()
 
 ##Defining discrete and countinuous features
@@ -46,3 +48,15 @@ mlp.score(X_train, y_train)
 
 ##Scoring my testing data
 mlp.score(X_test, y_test)
+
+##Example input to test out model
+diamond1 = {"carat": 0.25, 
+           "cut": 2,
+           "color": 5,
+           "clarity": 1,
+           "depth": 62.6,
+           "table": 58,
+           "price": 340,
+           "x": 3.93,
+           "y": 4.07,
+           "z": 2.73}
