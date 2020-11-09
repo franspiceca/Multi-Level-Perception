@@ -60,3 +60,6 @@ diamond1 = {"carat": 0.25,
            "x": 3.93,
            "y": 4.07,
            "z": 2.73}
+
+##Predict with input from above
+mlp.predict(diamond1)
